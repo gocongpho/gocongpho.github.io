@@ -1,1 +1,250 @@
-index tester
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gò Công Phố | Ký Ức Gò Công Xưa & Nay</title>
+    <meta name="description" content="Kênh chính thức của Gò Công Phố. Nơi lưu giữ và sẻ chia những thước phim tư liệu, hình ảnh hoài niệm, câu chuyện ký ức về mảnh đất và con người Gò Công.">
+    <meta name="keywords" content="Gò Công Phố, gocongpho, Gò Công xưa, ký ức Gò Công, thị xã Gò Công, hình ảnh Gò Công cũ, tư liệu Gò Công">
+    <meta name="author" content="Gò Công Phố">
+    <link rel="canonical" href="https://gocongpho.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gocongpho.github.io/">
+    <meta property="og:title" content="Gò Công Phố | Ký Ức Gò Công Xưa & Nay">
+    <meta property="og:description" content="Nơi lưu giữ những thước phim tư liệu, hình ảnh hoài niệm và câu chuyện ký ức về mảnh đất, con người Gò Công qua nhiều thế hệ.">
+    <meta property="og:image" content="https://gocongpho.github.io/avatar.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gocongpho.github.io/">
+    <meta property="twitter:title" content="Gò Công Phố | Ký Ức Gò Công Xưa & Nay">
+    <meta property="twitter:description" content="Nơi lưu giữ những thước phim tư liệu, hình ảnh hoài niệm và câu chuyện ký ức về mảnh đất, con người Gò Công qua nhiều thế hệ.">
+    <meta property="twitter:image" content="https://gocongpho.github.io/avatar.jpg">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "mainEntity": {
+                "@type": "Person",
+                "name": "Gò Công Phố",
+                "alternateName": "gocongpho",
+                "url": "https://gocongpho.github.io/",
+                "image": "https://gocongpho.github.io/avatar.jpg",
+                "description": "Nhà sáng tạo nội dung chuyên lưu giữ hình ảnh hoài niệm và tư liệu lịch sử, đời sống về Gò Công xưa và nay.",
+                "sameAs": [
+                    "https://www.tiktok.com/@gocongpho",
+                    "https://www.facebook.com/gocongphopage"
+                ]
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4ff;
+            background-image:
+                radial-gradient(ellipse 80% 60% at 20% -10%, rgba(99, 102, 241, 0.10) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 110%, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(200, 210, 255, 0.5);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .header-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(200, 210, 255, 0.5);
+        }
+
+        input,
+        textarea {
+            background: rgba(240, 244, 255, 0.9) !important;
+            border: 1px solid rgba(180, 195, 255, 0.6) !important;
+            color: #1e1b4b !important;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #9ca3af !important;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none !important;
+            border-color: #6366f1 !important;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen antialiased selection:bg-indigo-200 selection:text-indigo-900 flex items-center justify-center p-4 sm:p-6 md:p-8">
+
+    <main class="w-full max-w-4xl mx-auto space-y-5">
+
+        <header class="header-card w-full rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-2 md:gap-6 text-center sm:text-left shadow-sm">
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-red-400 to-rose-500 rounded-full blur opacity-50 group-hover:opacity-80 transition duration-500"></div>
+                <img src="https://gocongpho.github.io/avatar.jpg" alt="Gò Công Phố Avatar" class="relative rounded-full w-24 h-24 object-cover border-2 border-white shadow-md" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=gocongpho'">
+            </div>
+            <div class="flex-1 space-y-2">
+                <div class="inline-flex sm:items-center gap-2 justify-center sm:justify-start">
+                    <h1 class="text-2xl font-bold tracking-tight text-red-700">Gò Công Phố</h1>
+                    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 border border-red-200 w-max mx-auto sm:mx-0">
+                        <i class="fa-solid fa-film me-1"></i> Creator
+                    </span>
+                </div>
+                <p class="text-gray-500 text-sm max-w-md leading-relaxed">
+                    Nơi lưu giữ ký ức về mảnh đất <strong>Gò Công</strong> thân thương — qua từng thước phim, từng tấm ảnh cũ.
+                </p>
+            </div>
+        </header>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <a href="https://www.tiktok.com/@gocongpho" target="_blank" rel="noopener" class="bento-card md:col-span-2 rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
+                <div class="absolute right-[-20px] top-[-20px] text-9xl font-bold select-none text-gray-100 group-hover:text-indigo-100 transition-colors duration-300">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <div class="space-y-4 relative z-10">
+                    <div class="w-12 h-12 rounded-2xl bg-black flex items-center justify-center text-xl text-white shadow-sm">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">Kênh TikTok Chính Thức</h2>
+                        <p class="text-gray-500 text-sm mt-1">Cập nhật video hoài niệm về các địa danh, đời sống Gò Công xưa vào lúc 20:00 hằng ngày.</p>
+                    </div>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-semibold text-indigo-500 group-hover:translate-x-1 transition-transform relative z-10">
+                    Bấm để theo dõi <i class="fa-solid fa-arrow-right ml-1"></i>
+                </div>
+            </a>
+            <a href="https://facebook.com/gocongphopage" target="_blank" rel="noopener" class="bento-card rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-700 flex items-center justify-center text-xl text-white shadow-sm">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Facebook của chúng tôi</h2>
+                        <p class="text-gray-500 text-sm mt-1">Facebook chính thức — Nơi lưu giữ hình ảnh chất lượng cao và kết nối những người con xứ Gò.</p>
+                    </div>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-semibold text-blue-500 group-hover:translate-x-1 transition-transform">
+                    Ghé thăm Page <i class="fa-solid fa-arrow-right ml-1"></i>
+                </div>
+            </a>
+            <a href="#" rel="noopener" class="bento-card rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-scroll text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition-colors">Góc tư liệu</h2>
+                        <p class="text-gray-500 text-sm mt-1">Lưu trữ bản đồ, hình ảnh và tài liệu lịch sử về vùng đất Gò Công.</p>
+                    </div>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-semibold text-amber-600 group-hover:translate-x-1 transition-transform">
+                    Xem ngay <i class="fa-solid fa-arrow-right ml-1"></i>
+                </div>
+            </a>
+
+            <!-- Contact Form — wide -->
+            <div class="bento-card md:col-span-2 rounded-3xl p-6 space-y-4 shadow-sm">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 border border-emerald-100">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900">Liên hệ</h2>
+                        <p class="text-gray-400 text-xs">Nếu bạn có tài liệu về Gò Công hãy để lại thông tin chúng tôi sẽ liên hệ lại 24/7</p>
+                    </div>
+                </div>
+
+                <form id="my-form" action="https://formspree.io/f/mpqgpydj" method="POST" class="space-y-3 mt-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <input type="text" name="name" required placeholder="Tên của bạn" class="w-full px-4 py-2.5 rounded-xl text-sm transition-all">
+                        <input type="email" name="email" required placeholder="Email liên hệ" class="w-full px-4 py-2.5 rounded-xl text-sm transition-all">
+                    </div>
+                    <textarea name="message" rows="2" required placeholder="Nội dung..." class="w-full px-4 py-2.5 rounded-xl text-sm transition-all resize-none"></textarea>
+                    <button type="submit" id="submit-btn" class="w-full sm:w-auto px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-sm shadow-indigo-200">
+                        Gửi lời nhắn <i class="fa-solid fa-circle-arrow-right"></i>
+                    </button>
+
+                    <p id="form-status" class="text-sm mt-2 hidden"></p>
+                </form>
+                <script>
+                    const form = document.getElementById("my-form");
+                    const status = document.getElementById("form-status");
+                    const btn = document.getElementById("submit-btn");
+
+                    form.addEventListener("submit", async function(event) {
+                        event.preventDefault();
+
+                        btn.disabled = true;
+                        btn.innerText = "Đang gửi...";
+
+                        const data = new FormData(event.target);
+
+                        try {
+                            const response = await fetch(form.action, {
+                                method: form.method,
+                                body: data,
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            });
+
+                            status.classList.remove("hidden", "text-red-500", "text-green-500");
+
+                            if (response.ok) {
+                                status.innerText = "Cảm ơn! Lời nhắn của bạn đã được gửi thành công.";
+                                status.classList.add("text-green-500");
+                                form.reset();
+                            } else {
+                                const responseData = await response.json();
+                                if (responseData.hasOwnProperty('errors')) {
+                                    status.innerText = responseData.errors.map(error => error.message).join(", ");
+                                } else {
+                                    status.innerText = "Ối! Đã có lỗi xảy ra khi gửi form.";
+                                }
+                                status.classList.add("text-red-500");
+                            }
+                        } catch (error) {
+                            status.innerText = "Lỗi kết nối. Vui lòng kiểm tra lại mạng!";
+                            status.classList.add("text-red-500");
+                        } finally {
+                            btn.disabled = false;
+                            btn.innerHTML = 'Gửi lời nhắn <i class="fa-solid fa-circle-arrow-right"></i>';
+                        }
+                    });
+                </script>
+            </div>
+
+        </section>
+
+        <footer class="text-center py-4 text-xs text-gray-400 tracking-wide">
+            &copy; 2026 Gò Công Phố.
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
