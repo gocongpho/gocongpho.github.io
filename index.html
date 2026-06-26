@@ -131,7 +131,7 @@
         </header>
         <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-            <a href="https://www.tiktok.com/@gocongpho" rel="noopener" class="bento-card md:col-span-2 rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
+            <a href="https://www.tiktok.com/@gocongpho" data-deep-link="snssdk1128://user/profile/7421111111111111111" rel="noopener" class="bento-card md:col-span-2 rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
                 <div class="absolute right-[-20px] top-[-20px] text-9xl font-bold select-none text-gray-100 group-hover:text-indigo-100 transition-colors duration-300">
                     <i class="fa-brands fa-tiktok"></i>
                 </div>
@@ -148,7 +148,7 @@
                     Bấm để theo dõi <i class="fa-solid fa-arrow-right ml-1"></i>
                 </div>
             </a>
-            <a href="https://www.facebook.com/gocongphopage" rel="noopener" class="bento-card rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
+            <a href="https://www.facebook.com/gocongphopage" data-deep-link="fb://facewebmodal/fpage?href=https://www.facebook.com/gocongphopage" rel="noopener" class="bento-card rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
                 <div class="space-y-4">
                     <div class="w-12 h-12 rounded-2xl bg-blue-700 flex items-center justify-center text-xl text-white shadow-sm">
                         <i class="fa-brands fa-square-facebook"></i>
@@ -256,13 +256,21 @@
 
     </main>
 <script>
-document.querySelectorAll('a').forEach(link => {
+document.querySelectorAll('a[data-deep-link]').forEach(link => {
     link.addEventListener('click', function(e) {
+        const deepLink = this.getAttribute('data-deep-link');
+        const fallbackUrl = this.getAttribute('href');
         if (/TikTok/i.test(navigator.userAgent)) {
-            const url = this.getAttribute('href');
-            if (url && !url.startsWith('fb://') && !url.startsWith('snssdk1128://')) {
-                this.setAttribute('target', '_blank');
-            }
+            e.preventDefault();
+            const hiddenAnchor = document.createElement('a');
+            hiddenAnchor.href = deepLink;
+            hiddenAnchor.style.display = 'none';
+            document.body.appendChild(hiddenAnchor);
+            hiddenAnchor.click();
+            setTimeout(() => {
+                document.body.removeChild(hiddenAnchor);
+                window.location.href = fallbackUrl;
+            }, 1500);
         }
     });
 });
