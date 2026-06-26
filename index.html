@@ -120,7 +120,10 @@
         </header>
         <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-            <a href="https://www.tiktok.com/@gocongpho" rel="noopener" class="bento-card md:col-span-2 rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
+            <a href="https://www.tiktok.com/@gocongpho"
+   onclick="return openSmartLink(event, 'snssdk1233://user/profile/gocongpho', 'https://www.tiktok.com/@gocongpho')"
+   rel="noopener"
+   class="bento-card md:col-span-2 rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
                 <div class="absolute right-[-20px] top-[-20px] text-9xl font-bold select-none text-gray-100 group-hover:text-indigo-100 transition-colors duration-300">
                     <i class="fa-brands fa-tiktok"></i>
                 </div>
@@ -137,7 +140,10 @@
                     Bấm để theo dõi <i class="fa-solid fa-arrow-right ml-1"></i>
                 </div>
             </a>
-            <a href="https://facebook.com/gocongphopage" rel="noopener" class="bento-card rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
+            <a href="https://www.facebook.com/gocongphopage"
+   onclick="return openSmartLink(event, 'fb://facewebmodal/f?href=https://www.facebook.com/gocongphopage', 'https://www.facebook.com/gocongphopage')"
+   rel="noopener"
+   class="bento-card rounded-3xl p-6 flex flex-col justify-between group relative overflow-hidden shadow-sm">
                 <div class="space-y-4">
                     <div class="w-12 h-12 rounded-2xl bg-blue-700 flex items-center justify-center text-xl text-white shadow-sm">
                         <i class="fa-brands fa-square-facebook"></i>
@@ -166,7 +172,6 @@
                 </div>
             </a>
 
-            <!-- Contact Form — wide -->
             <div class="bento-card md:col-span-2 rounded-3xl p-6 space-y-4 shadow-sm">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 border border-emerald-100">
@@ -245,7 +250,35 @@
         </footer>
 
     </main>
+<script>
+function openSmartLink(event, appUrl, webUrl) {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
+    if (!isMobile) {
+        return true;
+    }
+
+    event.preventDefault();
+
+    const start = Date.now();
+    const onVisibilityChange = () => {
+        if (document.hidden) {
+            clearTimeout(fallback);
+            document.removeEventListener("visibilitychange", onVisibilityChange);
+        }
+    };
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.location.href = appUrl;
+    const fallback = setTimeout(() => {
+        if (!document.hidden && Date.now() - start < 2000) {
+            window.location.href = webUrl;
+        }
+    }, 900);
+
+    return false;
+}
+</script>
 </body>
 
 </html>
